@@ -102,3 +102,7 @@ h1{
 .finalTicket .label{
     font-weight: bold;
 }
+
+.hidden{
+    display:none;
+}

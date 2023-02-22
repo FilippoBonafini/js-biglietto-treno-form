@@ -158,10 +158,32 @@ const codeTicket =  Math.floor(Math.random()*10000);
 )
 ```
 
-### 6) Creiamo una classe css che nasconda il biglietto e la applichiamo di default al biglietto
+### 6) Creiamo una classe css che nasconda il biglietto e la applichiamo di default al biglietto:
 
 ```css
 .hidden{
-    dispay:none;
+    display:none;
 }
 ```
+
+### 7)Creiamo una variabile JS che racchiuda le classi dell'elemento che vogliamo nascondere (il biglietto) e rimuoviamo la classe 'hidden' quando facciamo click su conferma:
+
+```javascript
+//dichiariamo la variabile fuori dall'evento click
+const DOMticket = document.getElementById("biglietto").classList;
+//.....
+//Dentro l'evento click eseguimo l'azione di rimuovere la classe hidden
+DOMticket.remove("hidden")
+```
+
+### 7)Facciamo si che premendo annulla il biglietto sparisca
+
+```javascript
+//iniziamo un secondo evento
+buttonReset.addEventListener("click",
+    function(){
+        DOMticket.add("hidden");
+    }
+)
+```
+

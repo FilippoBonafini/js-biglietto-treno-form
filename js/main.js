@@ -9,14 +9,16 @@ const discountOver65 = 40; //----> Percentuale sconto over 65
 //bottoni
 const buttonConferm = document.getElementById("idBottoneConferma");
 const buttonReset = document.getElementById("idBottoneReset");
+const DOMticket = document.getElementById("biglietto").classList;
+
 //text-input
 let contentAge;
 let contentKm;
 let contentName;
 
 //Definiamo le variabili che prenderanno un valore una volta inseriti i dati
-let priceFull
-let finalPrice
+let priceFull;
+let finalPrice;
 
 //Definiamo le variabili che prenderanno un valore randomico (n. vagone e codice)
 const vagonNumber = Math.floor(Math.random()*10);
@@ -60,5 +62,15 @@ buttonConferm.addEventListener("click",
             DOMoffert.innerHTML = "STANDARD";
             DOMprice.innerHTML = priceFull+"$";
         }
+
+        DOMticket.remove("hidden");
+    }
+
+)
+
+//iniziamo un secondo evento
+buttonReset.addEventListener("click",
+    function(){
+        DOMticket.add("hidden");
     }
 )

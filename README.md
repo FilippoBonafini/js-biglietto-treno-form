@@ -94,7 +94,7 @@ buttonConferm.addEventListener("click",
 ```
 --------
 
-## MILESTONE 1
+## MILESTONE 2
 ### 1) Prepariamo JS a ricevere un ulteriore informazione dell'utente ossia il nome:
 
 ```javascript

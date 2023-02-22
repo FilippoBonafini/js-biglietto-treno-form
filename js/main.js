@@ -25,7 +25,8 @@ buttonConferm.addEventListener("click",
         //salviamo il conenuto degli input dentro le variabili prima inizializzate
         contentAge = document.getElementById("idInputEta").value;
         contentKm = document.getElementById("idInputKm").value;
-        priceFull = priceKm * Number(contentKm);
+        contentName = document.getElementById("inputName").value;
+        priceFull = priceKm * Number(contentKm).toFixed(2);
 
         //Verifichiamo se l'utente può accedere a sconti e se si salviamo le variabili
         if (Number(contentAge) < 18){
@@ -33,11 +34,11 @@ buttonConferm.addEventListener("click",
             console.log(finalPrice);
         }
         else if (Number(contentAge) >= 65){
-            finalPrice =(priceFull-(discountOver65 / 100)*priceFull).toFixed(2); //---> over
+            finalPrice = (priceFull-(discountOver65 / 100)*priceFull).toFixed(2); //---> over
             console.log(finalPrice);
         }
         else{
-            console.log(priceFull); //scriviamo direttamente il priceFull
+            console.log (String(priceFull)); //scriviamo direttamente il priceFull
         }
     }
 )

@@ -24,7 +24,7 @@
 # ---LOGICA UTILIZZATA---
 
 ## MILESTONE 1
-### Definisco tutte le variabili che verranno utilizzate all'interno dello script:
+### 1) Definisco tutte le variabili che verranno utilizzate all'interno dello script:
 
 ```javascript
 //Definiamo le variabili costanti:
@@ -47,7 +47,7 @@ let finalPrice
 
 ```
 
-### Inserisco nel mio documento HTML 2 input e 1 bottone con relativi ID
+### 2) Inserisco nel mio documento HTML 2 input e 1 bottone con relativi ID
 
 ```HTML
 <body>
@@ -65,27 +65,28 @@ let finalPrice
 </body>
 ```
 
-### Prendiamo i valori inseriti dall'utente dopo aver fatto il click sul bottone:
+### 3) Prendiamo i valori inseriti dall'utente dopo aver fatto il click sul bottone e li scriviamo in console:
 
 ```javascript
 //Iniziamo un evento:
 buttonConferm.addEventListener("click",
     function(){
+
         //salviamo il conenuto degli input dentro le variabili prima inizializzate
         contentAge = document.getElementById("idInputEta").value;
-        contentKm = document.getElementeById("idInputKm").value;
-        priceFull = priceKm * Number(contentKm);
+        contentKm = document.getElementById("idInputKm").value;
+        priceFull = priceKm * Number(contentKm).toFixed(2);
+
         //Verifichiamo se l'utente può accedere a sconti e se si salviamo le variabili
-        if Number(contentAge) < 18{
-            finalPrice = discountUnder18% di priceFull; //---> minorenni
+        if (Number(contentAge) < 18){
+            finalPrice = (priceFull-(discountUnder18 / 100)*priceFull).toFixed(2); //---> minorenni
             console.log(finalPrice);
         }
-        else if Number(ContentAge) >= 65{
-            finalPrice = discountOver65% di priceFull;
+        else if (Number(contentAge) >= 65){
+            finalPrice =(priceFull-(discountOver65 / 100)*priceFull).toFixed(2); //---> over
             console.log(finalPrice);
         }
         else{
-            document.innerHTML
             console.log(priceFull); //scriviamo direttamente il priceFull
         }
     }
@@ -93,4 +94,14 @@ buttonConferm.addEventListener("click",
 ```
 --------
 
-#### Realizzato da Filippo Bonafini
+## MILESTONE 1
+### 1) Prepariamo JS a ricevere un ulteriore informazione dell'utente ossia il nome:
+
+```javascript
+    //Dentro la funzione relativa all'onclick del buttonConferm
+    //......
+    contentName = document.getElementById("inputName").value;
+    //......
+```
+
+#### 2) Completiamo la struttura HTML e del CSS per ottenere un form di immissione dati e un form nel quale i dati verranno visualizzati

@@ -137,23 +137,31 @@ const codeTicket =  Math.floor(Math.random()*10000);
         document.getElementById("insertCode").innerHTML = codeTicket;
 
         //Verifichiamo se l'utente può accedere a sconti e se si salviamo le variabili
-        if (contentAge === '-18'){
+        if (contentAge === 'Minorenne'){
             finalPrice = (priceFull-(discountUnder18 / 100)*priceFull).toFixed(2); //---> minorenni
             console.log(finalPrice);
-            DOMofferta.innerHTML = "UNDER 18";
+            DOMoffert.innerHTML = "UNDER 18";
             DOMprice.innerHTML = finalPrice+"$";
         }
-        else if (contentAge === '65+'){
+        else if (contentAge === 'Senior(over 65)'){
             finalPrice = (priceFull-(discountOver65 / 100)*priceFull).toFixed(2); //---> over
             console.log(finalPrice);
-            DOMofferta.innerHTML = "OVER 65";
+            DOMoffert.innerHTML = "OVER 65";
             DOMprice.innerHTML = finalPrice+"$";
         }
         else{
             console.log (String(priceFull)); //scriviamo direttamente il priceFull
-            DOMofferta.innerHTML = "STANDARD";
+            DOMoffert.innerHTML = "STANDARD";
             DOMprice.innerHTML = priceFull+"$";
         }
     }
 )
+```
+
+### 6) Creiamo una classe css che nasconda il biglietto e la applichiamo di default al biglietto
+
+```css
+.hidden{
+    dispay:none;
+}
 ```

@@ -34,8 +34,8 @@ buttonConferm.addEventListener("click",
         priceFull = priceKm * Number(contentKm).toFixed(2);
 
         //Salviamo in delle variabili in contenuto dell'html dell'offerta e del costo
-         const DOMofferta = document.getElementById("insertOffert");
-         const DOMprice = document.getElementById("insertPrice");
+        const DOMoffert = document.getElementById("insertOffert");
+        const DOMprice = document.getElementById("insertPrice");
 
         //Scriviamo all'interno del biglietto le informazioni che siamo già sicuri di avere
         document.getElementById("insertName").innerHTML = contentName;
@@ -43,21 +43,21 @@ buttonConferm.addEventListener("click",
         document.getElementById("insertCode").innerHTML = codeTicket;
 
         //Verifichiamo se l'utente può accedere a sconti e se si salviamo le variabili
-        if (contentAge === '-18'){
+        if (contentAge === 'Minorenne'){
             finalPrice = (priceFull-(discountUnder18 / 100)*priceFull).toFixed(2); //---> minorenni
             console.log(finalPrice);
-            DOMofferta.innerHTML = "UNDER 18";
+            DOMoffert.innerHTML = "UNDER 18";
             DOMprice.innerHTML = finalPrice+"$";
         }
-        else if (contentAge === '65+'){
+        else if (contentAge === 'Senior(over 65)'){
             finalPrice = (priceFull-(discountOver65 / 100)*priceFull).toFixed(2); //---> over
             console.log(finalPrice);
-            DOMofferta.innerHTML = "OVER 65";
+            DOMoffert.innerHTML = "OVER 65";
             DOMprice.innerHTML = finalPrice+"$";
         }
         else{
             console.log (String(priceFull)); //scriviamo direttamente il priceFull
-            DOMofferta.innerHTML = "STANDARD";
+            DOMoffert.innerHTML = "STANDARD";
             DOMprice.innerHTML = priceFull+"$";
         }
     }

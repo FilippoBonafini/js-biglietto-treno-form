@@ -18,6 +18,11 @@ let contentName;
 let priceFull
 let finalPrice
 
+//Definiamo le variabili che prenderanno un valore randomico (n. vagone e codice)
+const vagonNumber = Math.floor(Math.random()*10);
+const codeTicket =  Math.floor(Math.random()*10000);
+
+
 //Iniziamo un evento:
 buttonConferm.addEventListener("click",
     function(){
@@ -25,20 +30,35 @@ buttonConferm.addEventListener("click",
         //salviamo il conenuto degli input dentro le variabili prima inizializzate
         contentAge = document.getElementById("idInputEta").value;
         contentKm = document.getElementById("idInputKm").value;
-        contentName = document.getElementById("inputName").value;
+        contentName = document.getElementById("idInputName").value;
         priceFull = priceKm * Number(contentKm).toFixed(2);
 
+        //Salviamo in delle variabili in contenuto dell'html dell'offerta e del costo
+         const DOMofferta = document.getElementById("insertOffert");
+         const DOMprice = document.getElementById("insertPrice");
+
+        //Scriviamo all'interno del biglietto le informazioni che siamo già sicuri di avere
+        document.getElementById("insertName").innerHTML = contentName;
+        document.getElementById("insertVagon").innerHTML = vagonNumber;
+        document.getElementById("insertCode").innerHTML = codeTicket;
+
         //Verifichiamo se l'utente può accedere a sconti e se si salviamo le variabili
-        if (Number(contentAge) < 18){
+        if (contentAge === '-18'){
             finalPrice = (priceFull-(discountUnder18 / 100)*priceFull).toFixed(2); //---> minorenni
             console.log(finalPrice);
+            DOMofferta.innerHTML = "UNDER 18";
+            DOMprice.innerHTML = finalPrice+"$";
         }
-        else if (Number(contentAge) >= 65){
+        else if (contentAge === '65+'){
             finalPrice = (priceFull-(discountOver65 / 100)*priceFull).toFixed(2); //---> over
             console.log(finalPrice);
+            DOMofferta.innerHTML = "OVER 65";
+            DOMprice.innerHTML = finalPrice+"$";
         }
         else{
             console.log (String(priceFull)); //scriviamo direttamente il priceFull
+            DOMofferta.innerHTML = "STANDARD";
+            DOMprice.innerHTML = priceFull+"$";
         }
     }
 )

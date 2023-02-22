@@ -1,6 +1,104 @@
-/* RESET  */
-*{   
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Fjalla One', sans-serif;
+
+}
+
+body{
+    background-color: #b91450;
+}
+
+
+h1{
+    color: white;
+    margin-bottom: 20px;
+}
+.center{
+    text-align: center;
+}
+
+.container-global{
+    padding-top: 50px;
+}
+
+.container-form{
+    background-color: rgb(255, 255, 255);
+    max-width: 90vw;
+    margin: auto;
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 100px;
+    
+}
+
+.container-input{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding-bottom: 30px;
+}
+
+.container-input input{
+    display: block;
+    font-size: 23px;
+    border: 2px solid #b91450;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding: 4px;
+}
+
+.container-input label{
+    font-size: 23px;
+}
+
+.container-input *{
+    text-align: center;
+}
+
+.buttonContainer{
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    margin-top: 30px;
+}
+.buttonContainer button{
+    font-size: 25px;
+    border: 2px solid #b91450;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.finalTicket{
+    background-color: rgb(255, 255, 255);
+    max-width: 90vw;
+    margin: auto;
+    padding: 30px;
+    height: 200px;
+    border: 10px solid rgb(239, 239, 239);
+    border-radius: 20px;
+    
+}
+
+.content-ticket{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    margin-top: 10px;
+    border-top: 2px solid black;
+}
+
+.content-ticket div{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+.finalTicket .label{
+    font-weight: bold;
 }

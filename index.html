@@ -7,27 +7,90 @@
     <title>Document</title>
 
     <!-- IMPORTAZIONE FONT  -->
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
     <!-- IMPORTAZIONE MY CSS  -->
     <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
 
-    <div>
-        <form action="/" method="get">
-            <label for="idInputEta">Inserisci la tua età</label>
-            <input type="number" id="idInputEta">
+    <div class="container-global">
 
-            <label for="idInputKm">Inserisci i km da percorrere</label>
-            <input type="number" id="idInputKm">
+        
 
-            <button id="idBottoneConferma" type="button">Conferma</button>
-        <form>
+        <div>
+
+            <h1 class="center">CONTAINER FORM</h1>
+
+            <form action="/" method="get" class="container-form">
+
+                <div class="container-input">
+                    <div>
+                        <label for="idInputEta" >Fascia d'età</label>
+
+                        <input list="etaRange" id="idInputEta">
+
+                        <datalist id="etaRange">
+                            <option value="-18">
+                            <option value="18-64">
+                            <option value="65+">
+                        </datalist>
+                        
+                    </div>
+                    <div>
+                        <label for="idInputEta">Nome e Cognome</label>
+                        <input type="text" id="idInputName">
+                    </div>
+                    <div>
+                        <label for="idInputKm">Inserisci i km da percorrere</label>
+                        <input type="number" id="idInputKm">
+                    </div>
+                </div>
+
+                <div class="buttonContainer">
+                    <button id="idBottoneConferma" type="button">Conferma</button>
+                    <button id="idBottoneAnnulla" type="reset">Annulla</button>
+                </div>
+
+            <form>
+             
+        </div>
+
+        <div class="">
+            <h1 class="center">Il tuo biglietto:</h1>
+            <div class="finalTicket">
+                <h2>Dettoglio passeggero</h2>
+                <div class="content-ticket">
+                    <div>
+                        <div class="label">NOME PASSEGGERO:</div>
+                        <div id="insertName"></div>
+                    </div>
+                    <div>
+                        <div class="label">Offerta</div>
+                        <div id="insertOffert"></div>
+                    </div>
+                    <div>
+                        <div class="label">Carrozza</div>
+                        <div id="insertVagon"></div>
+                    </div>
+                    <div>
+                        <div class="label">Codice CP</div>
+                        <div id="insertCode"></div>
+                    </div>
+                    <div>
+                        <div class="label">Costo biglietto</div>
+                        <div id="insertPrice"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- IMPORTAZIONE MY-JS  -->
     <script src="js/main.js"></script>
+
 
 </body>
 </html>

@@ -104,4 +104,56 @@ buttonConferm.addEventListener("click",
     //......
 ```
 
-#### 2) Completiamo la struttura HTML e del CSS per ottenere un form di immissione dati e un form nel quale i dati verranno visualizzati
+### 2) Completiamo la struttura HTML e del CSS per ottenere un form di immissione dati e un form nel quale i dati verranno visualizzati
+
+### 3) Modifico il codice JS per verificare le condizioni provenienti dalla selezione multipla dell'utente del campo 'età'
+
+```javascript
+        //Inseriamo operatori di ugualianza con la stringa aspettata
+        if (contentAge === '-18'){
+            finalPrice = (priceFull-(discountUnder18 / 100)*priceFull).toFixed(2); 
+            console.log(finalPrice);
+        }
+        else if (contentAge === '65+'){
+            finalPrice = (priceFull-(discountOver65 / 100)*priceFull).toFixed(2); 
+            console.log(finalPrice);
+        }
+```
+
+### 4) Aggiungo al condice JS delle variabili che vadano a generare valori randomici: il docie CP e il numero della carrozza
+
+```javascript
+//Definiamo le variabili che prenderanno un valore randomico (n. vagone e codice)
+const vagonNumber = Math.floor(Math.random()*10);
+const codeTicket =  Math.floor(Math.random()*10000);
+```
+
+### 5) Scriviamo tutti le informazioni all'interno del biglietto finale
+
+```javascript
+        //Scriviamo all'interno del biglietto le informazioni che siamo già sicuri di avere
+        document.getElementById("insertName").innerHTML = contentName;
+        document.getElementById("insertVagon").innerHTML = vagonNumber;
+        document.getElementById("insertCode").innerHTML = codeTicket;
+
+        //Verifichiamo se l'utente può accedere a sconti e se si salviamo le variabili
+        if (contentAge === '-18'){
+            finalPrice = (priceFull-(discountUnder18 / 100)*priceFull).toFixed(2); //---> minorenni
+            console.log(finalPrice);
+            DOMofferta.innerHTML = "UNDER 18";
+            DOMprice.innerHTML = finalPrice+"$";
+        }
+        else if (contentAge === '65+'){
+            finalPrice = (priceFull-(discountOver65 / 100)*priceFull).toFixed(2); //---> over
+            console.log(finalPrice);
+            DOMofferta.innerHTML = "OVER 65";
+            DOMprice.innerHTML = finalPrice+"$";
+        }
+        else{
+            console.log (String(priceFull)); //scriviamo direttamente il priceFull
+            DOMofferta.innerHTML = "STANDARD";
+            DOMprice.innerHTML = priceFull+"$";
+        }
+    }
+)
+```

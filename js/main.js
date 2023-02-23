@@ -60,7 +60,7 @@ buttonConferm.addEventListener("click",
         else{
             console.log (String(priceFull)); //scriviamo direttamente il priceFull
             DOMoffert.innerHTML = "STANDARD";
-            DOMprice.innerHTML = priceFull+"$";
+            DOMprice.innerHTML = priceFull.toFixed(2) +"$";
         }
 
         DOMticket.remove("hidden");

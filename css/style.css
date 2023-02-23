@@ -41,7 +41,8 @@ h1{
     padding-bottom: 30px;
 }
 
-.container-input input{
+.container-input input,
+.container-input select{
     display: block;
     font-size: 23px;
     border: 2px solid #b91450;
